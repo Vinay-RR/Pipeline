@@ -1,7 +1,6 @@
 pipeline {
   agent any
   parameters {
-  parameters {
   string defaultValue: 'TEST', description: 'Environment to deploy the application', name: 'ENV', trim: true
    choice choices: ['main', 'master'], description: 'environment to deploy application', name: 'BRANCH'
 }
@@ -15,6 +14,6 @@ pipeline {
 		exit 0
 		'''
 		}
-		}
-		}
-		}
+	}
+     }
+  }
