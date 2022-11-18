@@ -42,15 +42,16 @@ pipeline {
 	  steps {
 		  echo 'This is to deploy server 3'
 		  sh 'sleep 5'
-	  }
-  }
+	         }
+              }
 	stage ('SRVER 4')
 	       steps {
 		       echo 'This stage is to deploy Server4'
 		       sh 'sleep 5'
-	        }
-	       }
-		
-	}
-  }
+	               }
+	            }
+               }
+	   }
+       }
+    }
 }
