@@ -1,9 +1,8 @@
 #!/bin/bash
 set -x
 file=S1
-touch $file
+touch file $file
 whoami > $file
-ls
 git add *
 git commit -m "added new file"
 git push --all https://github.com/Vinay-RR/Pipeline.git
