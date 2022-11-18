@@ -1,10 +1,17 @@
 pipeline {
   agent any	
+  environment {
+  NAME = 'Vinay'
+  }
   stages {
     stage ('BUILD') {
       steps {
-        echo "This is Build stage"
-        sh 'sleep 5;'
+        echo "$NAME"
+        sh '''
+		sleep 5
+		echo "$NAME"
+		exit 0
+		'''
       }  
     }  
       stage ('TEST PARALLEL') {
