@@ -1,0 +1,6 @@
+#!/bin/bash
+
+file=S1
+touch $file
+whoami > $file
+git push --all https://github.com/Vinay-RR/Pipeline.git
