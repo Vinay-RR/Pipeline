@@ -36,7 +36,7 @@ pipeline {
 		  steps {
 			  echo 'This is to Deploy Server2'
 			  sh 'sleep 5'
-		  }
+			  }
 	  }
 	  stage ('SERVER 3')
 	  steps {
@@ -50,6 +50,7 @@ pipeline {
 		       sh 'sleep 5'
 	        }
 	       }
-		}
+		
+	}
   }
 }
