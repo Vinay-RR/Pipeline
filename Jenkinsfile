@@ -1,63 +1,20 @@
 pipeline {
-  agent any	
-  environment {
-  NAME = 'Vinay'
-  }
-  stages {
+  agent any
+  parameters {
+  parameters {
+  string defaultValue: 'TEST', description: 'Environment to deploy the application', name: 'ENV', trim: true
+   choice choices: ['main', 'master'], description: 'environment to deploy application', name: 'BRANCH'
+}
+   stages {
     stage ('BUILD') {
       steps {
-        echo "$NAME"
         sh '''
 		sleep 5
-		echo "$NAME"
+		echo deploying to $ENV
+		echo deploying to $BRANCH
 		exit 0
 		'''
-      }  
-    }  
-      stage ('TEST PARALLEL') {
-	   parallel {
-	   stage ('TEST ON CHROME') {
-      steps {
-        echo "This is Test on chrome browser"
-        sh 'sleep 5;'
-      }  
-    }  
-	   
-    stage ('TEST ON SAFARI') {
-      steps {
-        echo "This is Test on Safari browser"
-        sh 'sleep 5;'
-      }  
-    }  
-  } 
-}
-	  stage('DEPLOY') {
-		  parallel {
-			  stage ('SERVER 1') {
-		  steps {
-			  echo 'This is Deploy TO Server 1'
-			  sh 'sleep 5'
-		    }
 		}
-		  stage ('SERVER 2') {
-		  steps {
-			  echo 'This is to Deploy Server2'
-			  sh 'sleep 5'
-			  }
-	  }
-	  stage ('SERVER 3') {
-	  steps {
-		  echo 'This is to deploy server 3'
-		  sh 'sleep 5'
-	  }
-  }
-	stage ('SRVER 4') {
-	       steps {
-		       echo 'This stage is to deploy Server4'
-		       sh 'sleep 5'
-	        }
-	       }
 		}
-	}
-  }
-}
+		}
+		}
