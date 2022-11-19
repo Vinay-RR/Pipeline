@@ -1,6 +1,6 @@
 pipeline {
   agent {
-  label 'jenkins'
+  label 'C_Project_Test'
 }	
   stages {
     stage ('BUILD') {
