@@ -3,5 +3,5 @@
 touch file $1
 whoami > $1
 git add *
-git commit -m "added new file"
+git commit -m "added new file $1"
 git push --all https://github.com/Vinay-RR/Pipeline.git
